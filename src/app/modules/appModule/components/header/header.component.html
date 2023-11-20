@@ -1,0 +1,14 @@
+<header class="header">
+<div class="headerContetn">
+  <p class="textHeader">Имя пользователя: {{dataUser?.firstName}}</p>
+  <p class="textHeader">Фамилия пользователя: {{dataUser?.lastName}}</p>
+ <p> <a  href="#">Logout </a></p>
+ <p>
+  <a href="{{dataUser?.webSiteURL}}">Ссылка на профтль</a>
+ </p> 
+</div>
+<div class="messengeToUser">
+<P *ngIf="trueChange">Вы успешно изменили данные</P>
+<app-erorMessenge *ngIf="errorChange"></app-erorMessenge>
+</div>
+</header>

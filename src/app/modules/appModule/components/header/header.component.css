@@ -1,0 +1,13 @@
+.header{
+    width: 100%;
+    height: 100px;
+    background-color: #435261;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.textHeader{
+font-size: 14px;
+color: white;
+}

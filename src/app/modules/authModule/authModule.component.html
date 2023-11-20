@@ -1,0 +1,38 @@
+<div class="LoginMain">
+    <form action="" class="loginForm" [formGroup]="formConrolLogin">
+        <div class="loginFormContent">
+            <div>
+                <p class="loginFormText">Логин</p>
+                <input
+                    class="inputLogin"
+                    [ngClass]="{
+                        errorMessenge: errorMessenge
+                    }"
+                    formControlName="login"
+                    type="text"
+                />
+            </div>
+            <div>
+                <p class="loginFormText">Пароль</p>
+                <input
+                    class="inputPassword"
+                    type="password"
+                    formControlName="password"
+                    [ngClass]="{
+                        errorMessenge: errorMessenge
+                    }"
+                />
+            </div>
+            <div class="containerLoginBtn">
+                <button
+                    *ngIf="btnDisable"
+                    class="loginBtn"
+                    (click)="chechDataAuth()"
+                >
+                    Войти
+                </button>
+            </div>
+            <p *ngIf="errorMessenge">Неверный логин или пароль</p>
+        </div>
+    </form>
+</div>

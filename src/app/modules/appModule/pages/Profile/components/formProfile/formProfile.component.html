@@ -1,0 +1,112 @@
+<div class="formProfilePersonalData">
+    <div>
+
+   
+    <form action="" [formGroup]="formControlProfile">
+        <div>
+            <p class="formProfilePersonalDataText">Email</p>
+            <input
+                type="email"
+                class="formProfilePersonalDataInput"
+                formControlName="emai"
+                
+            />
+        </div>
+        <div>
+            <p class="formProfilePersonalDataText">Имя</p>
+            <input
+                type="text"
+                formControlName="firstName"
+                class="formProfilePersonalDataInput"
+              
+             
+            />
+        </div>
+        <div>
+            <p class="formProfilePersonalDataText">Фамилия</p>
+            <input
+                type="text"
+                formControlName="lastName"
+                class="formProfilePersonalDataInput"
+                maxlength="255"
+                [ngClass]="{
+                    ErrorInput:
+                        formControlProfile.controls['lastName'].invalid &&
+                        formControlProfile.controls['lastName'].touched
+                }"
+            />
+        </div>
+        <div>
+            <p class="formProfilePersonalDataText">номер телефона</p>
+            <input
+                type="text"
+                formControlName="phoneNumber"
+                class="formProfilePersonalDataInput"
+                maxlength="12"
+                [ngClass]="{
+                    ErrorInput:
+                        formControlProfile.controls['phoneNumber'].invalid &&
+                        formControlProfile.controls['phoneNumber'].touched
+                }"
+            />
+        </div>
+        <div>
+            <p class="formProfilePersonalDataText">сайт url</p>
+            <input
+                type="text"
+                formControlName="webSiteURL"
+                class="formProfilePersonalDataInput"
+                [ngClass]="{
+                    ErrorInput:
+                        formControlProfile.controls['webSiteURL'].invalid &&
+                        formControlProfile.controls['webSiteURL'].touched
+                }"
+            />
+        </div>
+        <button class="btnProfilePage" (click)="saveDataProfile()">
+            Сохранить
+        </button>
+    </form>
+     </div>
+    <div class="error">
+        <!-- <p
+            *ngIf="
+                formControlProfile.controls['firstName'].invalid &&
+                formControlProfile.controls['firstName'].touched
+            "
+            class="errorText"
+        >
+            Вы ввели в именни меньше 5 или более 255символов
+        </p> -->
+        <p
+            *ngIf="
+                formControlProfile.controls['lastName'].invalid &&
+                formControlProfile.controls['lastName'].touched
+            "
+            class="errorText"
+        >
+            Вы ввели в Фамилия меньше 5 или более 255символов
+        </p>
+    
+        <p
+            *ngIf="
+                formControlProfile.controls['phoneNumber'].invalid &&
+                formControlProfile.controls['phoneNumber'].touched
+            "
+            class="errorText"
+        >
+            Вы ввели некоректный номер телефона, проверте ещё раз, должен начинаться
+            с +7
+        </p>
+        <p
+            *ngIf="
+                formControlProfile.controls['webSiteURL'].invalid &&
+                formControlProfile.controls['webSiteURL'].touched
+            "
+            class="errorText"
+        >
+            Вы ввели некоректный Url, проверте ещё раз.
+        </p>
+    </div>
+</div>
+
